@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>온라인 시험 시스템 – 응시자</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b3d91">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">온라인 시험 시스템</div>
+  <nav>
+    <a href="admin.html" class="link">관리자</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section id="loginSection" class="card">
+    <h2>응시 시작</h2>
+    <p class="muted">감독관이 제공한 <b>접속 코드</b>와 본인 정보를 입력하세요.</p>
+    <form id="loginForm" class="grid-2">
+      <label>이름<input required id="studentName" autocomplete="name" /></label>
+      <label>학번/ID<input required id="studentId" autocomplete="off"/></label>
+      <label>접속 코드<input required id="accessCode" autocomplete="one-time-code"/></label>
+      <button class="primary" type="submit">시험 불러오기</button>
+    </form>
+    <div id="loginMsg" class="warn"></div>
+  </section>
+
+  <section id="examSection" class="card hidden">
+    <div class="exam-head">
+      <div>
+        <h2 id="examTitle">시험명</h2>
+        <div class="muted" id="examMeta"></div>
+      </div>
+      <div class="hud">
+        <button id="btnFullscreen" class="ghost">전체화면</button>
+        <span class="timer" id="timer">--:--:--</span>
+      </div>
+    </div>
+
+    <div id="integrity" class="integrity">
+      <span>부정행위 감지 로그</span>
+      <ul id="logList"></ul>
+    </div>
+
+    <form id="examForm" class="exam">
+      <div id="questionList"></div>
+      <div class="exam-actions">
+        <button id="btnSave" type="button" class="ghost">임시저장</button>
+        <button id="btnSubmit" type="submit" class="primary">제출</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="resultSection" class="card hidden">
+    <h2>제출 완료</h2>
+    <p class="muted">점수와 세부 결과를 확인하세요.</p>
+    <div id="scoreBlock" class="score"></div>
+    <details>
+      <summary>세부 결과</summary>
+      <pre id="resultJson" class="code"></pre>
+    </details>
+    <div class="exam-actions">
+      <button id="btnDownload" class="ghost">JSON 내보내기</button>
+    </div>
+  </section>
+</main>
+
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>온라인 시험 시스템 – 관리자</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b3d91">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">관리자 콘솔</div>
+  <nav><a href="index.html" class="link">응시자 화면</a></nav>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>시험 불러오기 / 생성</h2>
+    <div class="grid-2">
+      <div>
+        <label>문제 JSON 업로드
+          <input id="fileInput" type="file" accept="application/json"/>
+        </label>
+      </div>
+      <div>
+        <label>샘플 가져오기
+          <button id="btnLoadSample" type="button" class="ghost">예시 로드</button>
+        </label>
+      </div>
+    </div>
+    <textarea id="examJson" rows="14" class="mono" placeholder="여기에 시험 JSON을 붙여넣기 하세요."></textarea>
+    <div class="grid-3">
+      <label>접속 코드<input id="accessCode" value="MID2025"/></label>
+      <label>허용 탭이탈 횟수<input type="number" id="maxViolations" value="3" min="0"/></label>
+      <label>음성 안내(선택)<input id="voiceHint" placeholder="예: 탭이탈 시 경고합니다."/></label>
+    </div>
+    <div class="exam-actions">
+      <button id="btnPublish" class="primary">시험 게시(로컬)</button>
+      <button id="btnExport" class="ghost">설정+문제 Export</button>
+      <button id="btnClear" class="ghost">로컬 초기화</button>
+    </div>
+    <p class="muted">* 로컬 게시: 이 브라우저의 localStorage에 저장됩니다. 실제 운영 시 서버/DB 연동이 필요합니다.</p>
+  </section>
+
+  <section class="card">
+    <h2>응시 결과 집계(이 브라우저 기준)</h2>
+    <div class="exam-actions">
+      <button id="btnDumpSubmits" class="ghost">제출 데이터 JSON 보기</button>
+      <button id="btnExportCSV" class="ghost">CSV 내보내기</button>
+    </div>
+    <pre id="submitsJson" class="code"></pre>
+  </section>
+</main>
+
+<script src="admin.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "examId": "CS101-MID-2025",
+    "title": "컴퓨터개론 중간고사",
+    "durationSec": 1800,
+    "shuffle": true
+  },
+  "questions": [
+    {
+      "id": "Q1",
+      "type": "mcq",
+      "text": "CPU의 기능으로 올바른 것은?",
+      "options": [
+        "데이터 영구 저장",
+        "연산과 제어",
+        "화면 출력",
+        "전원 공급"
+      ],
+      "answer": 1,
+      "points": 2
+    },
+    {
+      "id": "Q2",
+      "type": "mcq",
+      "text": "RAM은 어떤 저장장치인가?",
+      "options": [
+        "휘발성 주기억장치",
+        "비휘발성 보조기억장치",
+        "광학 저장장치",
+        "자기 테이프"
+      ],
+      "answer": 0,
+      "points": 2
+    },
+    {
+      "id": "Q3",
+      "type": "short",
+      "text": "운영체제의 주요 역할을 1~2문장으로 기술하시오.",
+      "points": 4
+    },
+    {
+      "id": "Q4",
+      "type": "mcq",
+      "text": "다음 중 네트워크 장비가 아닌 것은?",
+      "options": [
+        "스위치",
+        "라우터",
+        "허브",
+        "프린터"
+      ],
+      "answer": 3,
+      "points": 2
+    }
+  ]
+}
